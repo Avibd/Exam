@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+}
+
+<div ng-controller="RepositoryController">
+    <div class="row">
+        <label>Search Repository</label>
+        <input ng-model="query" name="query"/>
+        <button ng-click="GetRepositories()" class="btn btn-default">Search</button>
+    </div>
+    <hr />
+    <div class="row">
+       <div class="col-xs-3 repository" ng-repeat="rep in repositories">
+               <label class="repository-name">{{rep.name}}</label>
+               <span class="material-icons bookmark-btn float-right" ng-click="Bookmark(rep)" ng-class="rep.bookmarked ? 'active' :''">
+                   star
+               </span>
+               <img src="{{rep.owner.avatar_url}}" class="avatar" />
+       </div>
+    </div>
+</div>
+
+@section scripts{
+        <script src="~/Scripts/Controllers/RepositoryController.js"></script>
+    }

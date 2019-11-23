@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Bookmarked";
+}
+
+<div ng-controller="BookmarkedRepositoriesController">
+    <h2>Bookmarked Repositories</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Avatar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="rep in repositories">
+                <td>{{rep.name}}</td>
+                <td><img src="{{rep.owner.avatar_url}}" /></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+@section scripts{
+<script src="~/Scripts/Controllers/BookmarkedRepositoriesController.js"></script>
+    }
