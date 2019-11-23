@@ -1,1 +1,3 @@
-# Exam
+- Download the project and extract the zip file
+- Run the solution in visual studio 2015 or higher
+- Run the application
